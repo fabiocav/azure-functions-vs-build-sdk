@@ -135,7 +135,7 @@ Target "WaitForSigning" (fun _ ->
     match signed with
     | Success file ->
         Unzip "tmpBuild" file
-        MoveFileTo ("tmpBuild" @@ "Microsoft.NET.Sdk.Functions.dll", packOutputPath @@ "netstandard2.0\\Microsoft.NET.Sdk.Functions.dll")
+        MoveFileTo ("tmpBuild" @@ "Microsoft.NET.Sdk.Functions.dll", packOutputPath @@ "netcoreapp2.1\\Microsoft.NET.Sdk.Functions.dll")
         MoveFileTo ("tmpBuild" @@ "Microsoft.NET.Sdk.Functions.MSBuild.dll", buildTaskOutputPath @@ "netstandard1.5\\Microsoft.NET.Sdk.Functions.MSBuild.dll")
         MoveFileTo ("tmpBuild" @@ "Microsoft.NET.Sdk.Functions.Generator.dll", generatorOutputPath @@ "netcoreapp2.1\\Microsoft.NET.Sdk.Functions.Generator.dll")
     | Failure e -> targetError e null |> ignore
